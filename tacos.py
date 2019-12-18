@@ -24,7 +24,16 @@ def main(url):
         print('Timeout Error')
     except:  # broad error output
         print('Error')
-recipies = int(input('How many recipies would you like in your Random cookbook?\nPlease enter a whole number: '))
-for number in range(recipies):
+
+
+while True:
+    try:
+        recipes = int(
+            input('How many recipies would you like in your Random cookbook?\nPlease enter a whole number: '))
+        break
+    except ValueError:
+        print('Try again')
+
+for number in range(recipes):
     main(url)
 document.save('TacoBook.docx')
