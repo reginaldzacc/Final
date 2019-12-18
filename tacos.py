@@ -5,7 +5,7 @@ Random Taco Cook Book Generator
 import requests
 import docx
 
-document = docx.newdocument()
+document = docx.
 
 url = 'https://taco-1150.herokuapp.com/random/?full_taco=true'
 
