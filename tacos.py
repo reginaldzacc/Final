@@ -2,14 +2,22 @@
 Reginald Zaccardi-Richey
 Random Taco Cook Book Generator
 '''
+
+
+'''
+'''
 import requests
 import docx
 
-document = docx.Document()
 
+'''
+'''
+document = docx.Document()
 url = 'https://taco-1150.herokuapp.com/random/?full_taco=true'
 
 
+'''
+'''
 def main(url):
     try:
         data = requests.get(url).json()
@@ -26,14 +34,17 @@ def main(url):
         print('Error')
 
 
+'''
+    '''
 while True:
     try:
         recipes = int(
-            input('How many recipies would you like in your Random cookbook?\nPlease enter a whole number: '))
+            input('How many recipes would you like in your Random cookbook?\nPlease enter a whole number: '))
         break
     except ValueError:
         print('Try again')
-
+print('Generating TacoBook')
 for number in range(recipes):
     main(url)
 document.save('TacoBook.docx')
+print('Your Random Taco Cookbook has been created with the file name \'TacoBook.docx\'')
